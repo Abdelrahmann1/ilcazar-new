@@ -913,11 +913,25 @@ body { counter-reset: launch; }
 /* ---------- Mobile refinements ---------- */
 @media (max-width: 991.98px) {
   .new-launch-section { padding-block: 4rem !important; }
-  .new-launch-section h2 { font-size: 2.8rem !important; }
+  .new-launch-section h2 { font-size: 2.6rem !important; line-height: 1.05 !important; }
   .launch-features { grid-template-columns: 1fr; }
   .new-launch-section::before { inset-inline-end: 5%; top: 1rem; }
   .launch-image::after { display: none; }
-  #hero h2 { font-size: 2.6rem; }
+  #hero h2 { font-size: 2.4rem; line-height: 1.15; }
+  #hero h2::before { font-size: 0.66rem; letter-spacing: 0.28em; margin-bottom: 0.9rem; }
+  #hero h2::after {
+    font-size: clamp(2.4rem, 12vw, 4rem) !important;
+    margin-top: 0.2rem;
+  }
+  /* keep the marquee from blowing up vertically on small screens */
+  .lavista-mini-locations::before {
+    font-size: clamp(4rem, 14vw, 7rem) !important;
+  }
+  /* footer watermark scaled down so it doesn't overlap content */
+  .footer.dark-background::before {
+    font-size: clamp(4rem, 18vw, 9rem) !important;
+    top: -1rem;
+  }
 }
 
 /* RTL adjustment for launch tag direction */
@@ -1053,16 +1067,36 @@ body { counter-reset: launch; }
 }
 .section-title h2 {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 }
 .section-title h2::before,
 .section-title h2::after {
   content: "";
-  display: inline-block;
-  width: 28px;
+  flex: 0 0 28px;
   height: 1px;
-  vertical-align: middle;
   background: rgba(13, 12, 29, 0.18);
-  margin: 0 18px;
+}
+
+/* Mobile: drop the flanking hairlines so the title stays on a clean line
+   without overlap with mixed Arabic + Latin text */
+@media (max-width: 767.98px) {
+  .section-title h2 {
+    display: block;
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
+  .section-title h2::before,
+  .section-title h2::after {
+    display: none !important;
+  }
+  .section-title::before {
+    margin-bottom: 16px;
+  }
 }
 
 /* ---------- New launch image: dual-frame offset ---------- */
