@@ -508,17 +508,17 @@ body.sticked .header .ure-mobile-toggle span {
   z-index: 3;
 }
 
-/* Unified dark backdrop wrapping title + subtitle for guaranteed readability */
+/* Unified dark backdrop wrapping title + subtitle — lighter so the photo shows */
 #hero .container > .row {
   position: relative;
-  background: rgba(13, 12, 29, 0.72);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(13, 12, 29, 0.32);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   padding: 2.4rem 2rem 2.6rem !important;
   border-inline-start: 3px solid var(--ember);
   max-width: 760px;
   margin: 0 auto !important;
-  box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.4);
 }
 
 #hero h2 {
