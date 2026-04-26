@@ -344,59 +344,136 @@ body.sticked .header .ure-mobile-toggle span {
 /* Remove the previous dark fade-to-ink layer */
 #hero.hero::after { display: none !important; }
 
+/* ---------- Editorial split: ivory text panel + photo ---------- */
+/* Override Bootstrap text-center / justify-content-center inside hero */
+#hero .container > .row.text-center,
+#hero .container > .row.justify-content-center {
+  text-align: right !important;
+  justify-content: flex-start !important;
+}
+#hero .container > .row > * {
+  text-align: right !important;
+}
 #hero .container {
   position: relative;
   z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-block: 7rem 5rem !important;
 }
 
-/* Focused dark glow ONLY behind the text block — keeps the photo visible
-   on the rest of the hero while the title and paragraph stay readable */
 #hero .container > .row {
   position: relative;
+  background: var(--ivory);
+  padding: 3rem 3.2rem 3rem 3.2rem !important;
+  max-width: 640px;
+  margin: 0 !important;
+  box-shadow: 0 40px 80px -20px rgba(13, 12, 29, 0.55);
+  border-top: 4px solid var(--ember);
 }
+
+[dir="rtl"] #hero .container {
+  justify-content: flex-end;
+}
+
 #hero .container > .row::before {
   content: "";
   position: absolute;
-  inset: -40px -8% -40px -8%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(13, 12, 29, 0.78) 0%,
-    rgba(13, 12, 29, 0.55) 40%,
-    rgba(13, 12, 29, 0.18) 70%,
-    transparent 100%
-  );
+  inset-inline-end: -22px;
+  bottom: -22px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(244, 241, 234, 0.5);
   pointer-events: none;
   z-index: -1;
-  border-radius: 50%;
-  filter: blur(2px);
 }
 
 #hero h2 {
   font-family: var(--display-font);
   font-weight: 500;
-  font-size: 50px;
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
   letter-spacing: -0.015em;
-  color: var(--ivory);
-  margin-bottom: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
   position: relative;
-  /* Layered text shadow gives crisp contrast against any photo */
-  text-shadow:
-    0 2px 16px rgba(13, 12, 29, 0.85),
-    0 1px 3px rgba(13, 12, 29, 0.95),
-    0 0 36px rgba(13, 12, 29, 0.6);
+  text-shadow: none;
 }
 
 #hero p {
   font-family: "Tajawal", sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.9;
-  color: rgba(244, 241, 234, 0.95);
-  max-width: 56ch;
-  margin-inline: auto;
-  text-shadow:
-    0 2px 10px rgba(13, 12, 29, 0.85),
-    0 1px 2px rgba(13, 12, 29, 0.9);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--ink);
+  max-width: none;
+  margin: 0 0 1.6rem !important;
+  text-shadow: none;
+  text-align: right;
+}
+
+/* Override the eyebrow color (was ember on dark, now blue on ivory) */
+#hero h2::before {
+  color: var(--blue) !important;
+}
+
+/* Drop the giant 'vision.' word — too big for the panel layout */
+#hero h2::after {
+  display: none !important;
+}
+
+/* The carousel keeps showing photos full-width, but darken slightly less */
+#hero.hero::before {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 12, 29, 0.18) 0%,
+    rgba(13, 12, 29, 0.08) 50%,
+    rgba(13, 12, 29, 0.32) 100%
+  ) !important;
+}
+
+#hero .carousel-item img {
+  filter: contrast(1.06) saturate(1.05) brightness(1) !important;
+}
+
+/* Restyle the CTA button for the ivory panel context */
+#hero .btn-register-out-side {
+  background: var(--ink) !important;
+  color: var(--ivory) !important;
+  border: 1px solid var(--ink) !important;
+  padding: 0.95rem 1.8rem !important;
+  font-size: 0.95rem !important;
+}
+#hero .btn-register-out-side::before {
+  background: var(--blue) !important;
+}
+#hero .btn-register-out-side:hover {
+  border-color: var(--blue) !important;
+}
+
+/* Keep scroll cue on the dark portion of the hero, ivory color */
+#hero .container::after {
+  inset-inline-start: auto;
+  inset-inline-end: 8%;
+  bottom: 30px;
+  background: linear-gradient(180deg, rgba(244, 241, 234, 0.75), transparent);
+}
+
+/* Mobile: full-width panel sitting at the bottom */
+@media (max-width: 991.98px) {
+  #hero .container {
+    padding-block: 6rem 2rem !important;
+    padding-inline: 18px !important;
+    align-items: flex-end;
+  }
+  #hero .container > .row {
+    max-width: 100%;
+    padding: 2rem 1.6rem !important;
+    width: 100%;
+  }
+  #hero h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  #hero .container > .row::before { display: none; }
 }
 
 .btn-register-out-side {
