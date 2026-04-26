@@ -56,36 +56,49 @@ body.index-page::before {
   direction: ltr;
 }
 
-/* Desktop: override main.css 1fr-auto-1fr grid so logo column hugs the LEFT
-   edge with no container padding pulling it inward. */
+/* Desktop: 1fr / auto / 1fr grid — center column (nav) is dead-center of the
+   navbar regardless of how wide logo or CTA are. */
 @media (min-width: 992px) {
   .header > .container-fluid,
   .header > .container-xl {
-    grid-template-columns: auto 1fr auto !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    column-gap: 32px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
   }
 
-  /* Logo flush to the left of its grid cell */
+  /* Logo: at the START of the LEFT 1fr column (= far-left edge) with breathing room */
   .header .logo.ure-logo-side {
     justify-self: start !important;
+    align-self: center;
     margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 24px !important;
     order: 0;
   }
   .header .logo.ure-logo-side img {
     display: block;
+    height: 44px;
+    width: auto;
   }
 
-  /* Nav menu stays centered absolutely */
+  /* Nav menu lives in the AUTO middle column — dead-centered horizontally */
   .header .ure-navmenu {
     justify-self: center !important;
+    align-self: center;
+    display: flex !important;
+    align-items: center;
+    gap: 1.6rem !important;
   }
 
-  /* CTA flush to the right edge */
+  /* CTA: at the END of the RIGHT 1fr column (= far-right edge) */
   .header .ure-logo-side.justify-content-end,
   .header .ure-logo-side:last-of-type {
     justify-self: end !important;
+    align-self: center;
     margin: 0 !important;
+    padding-left: 24px !important;
+    padding-right: 0 !important;
     order: 2;
   }
 }
