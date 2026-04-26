@@ -359,16 +359,6 @@ body.sticked .header .ure-mobile-toggle span {
   margin-bottom: 1.4rem;
   position: relative;
 }
-#hero h2::before {
-  content: "01 — Developer";
-  display: block;
-  font-family: var(--mono-font);
-  font-size: 0.78rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--ember);
-  font-weight: 400;
-}
 
 #hero p {
   font-family: "Tajawal", sans-serif;
@@ -965,18 +955,7 @@ body { counter-reset: launch; }
 #hero h2 {
   position: relative;
 }
-#hero h2::after {
-  content: "vision.";
-  display: block;
-  font-family: var(--display-font);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(3.6rem, 9vw, 8rem);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  color: var(--ember);
-  text-shadow: 0 4px 30px rgba(250, 127, 40, 0.25);
-}
+
 
 /* ---------- Scroll cue at hero bottom ---------- */
 #hero .container::after {
