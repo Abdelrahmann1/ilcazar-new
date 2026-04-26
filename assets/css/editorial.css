@@ -48,10 +48,34 @@ body.index-page::before {
   box-shadow: none !important;
 }
 
-/* Container: keep logo left, CTA right, but absolutely center the nav menu */
+/* Container: force LTR flow so logo sits LEFT, CTA RIGHT,
+   regardless of the document's RTL direction.
+   The nav menu keeps its own dir="rtl" for Arabic text. */
 .header > .container-fluid,
 .header > .container-xl {
   position: relative;
+  direction: ltr;
+}
+
+/* Logo pinned to the left edge */
+.header .logo.ure-logo-side {
+  margin-right: auto;
+  margin-left: 0;
+  order: 0;
+}
+
+/* CTA pinned to the right edge */
+.header .ure-logo-side.justify-content-end {
+  margin-left: auto;
+  margin-right: 0;
+  order: 2;
+}
+
+/* Mobile hamburger stays at the right edge in mobile */
+.header .ure-mobile-toggle {
+  margin-left: auto;
+  margin-right: 0;
+  order: 2;
 }
 
 .header .ure-navmenu {
