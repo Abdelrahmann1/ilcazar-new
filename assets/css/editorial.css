@@ -1268,16 +1268,31 @@ body { counter-reset: launch; }
 .floating-icons {
   z-index: 999;
 }
-.floating-icons .circle-btn {
-  background: var(--ink) !important;
-  border: 1px solid var(--ember);
-}
+.floating-icons .circle-btn,
 .floating-icons .phone {
-  background: var(--blue) !important;
-  border: 1px solid var(--ivory);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: 0 14px 30px -10px rgba(13, 12, 29, 0.35);
+  width: auto;
+  height: auto;
+  padding: 0 !important;
+  border-radius: 50%;
+  overflow: visible;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
 }
+.floating-icons .circle-btn:hover,
+.floating-icons .phone:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 22px 40px -12px rgba(13, 12, 29, 0.45);
+}
+/* Show your actual PNG icons in their natural colors */
 .floating-icons img {
-  filter: brightness(0) invert(1);
+  filter: none !important;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
 }
 
 /* ---------- Smooth scroll-margin so anchors clear the fixed header ---------- */
