@@ -279,7 +279,7 @@ body.index-page::before {
     background: var(--ivory) !important;
     border: 1px solid var(--ivory) !important;
     border-radius: 0 !important;
-    color: #000000 !important;
+    color: var(--ink) !important;
     font-family: var(--display-font) !important;
     font-style: italic !important;
     font-size: 1.4rem !important;
@@ -311,7 +311,7 @@ body.index-page::before {
   .ure-mobile-cta:focus {
     background: var(--ember) !important;
     border-color: var(--ember) !important;
-    color: #000000 !important;
+    color: var(--ink) !important;
     letter-spacing: 0.02em !important;
   }
   .ure-mobile-cta:hover::after,
