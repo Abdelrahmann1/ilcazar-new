@@ -181,12 +181,10 @@ body.sticked .header .ure-mobile-toggle span {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  /* Lighter treatment so the photos stay visible */
+  /* Lighter treatment so the photos stay visible — no zoom/rotate */
   filter: contrast(1.04) saturate(1.05) brightness(0.92);
-  transition: filter 1.2s ease, transform 8s ease;
-}
-#hero .carousel-item.active img {
-  transform: scale(1.04);
+  transform: none !important;
+  transition: none !important;
 }
 
 /* Neutralize the legacy heavy overlay from main.css and replace with a soft readability tint */
