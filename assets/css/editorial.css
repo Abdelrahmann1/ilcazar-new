@@ -103,20 +103,120 @@ body.index-page::before {
   }
 }
 
-/* Mobile: keep flex layout, hamburger right */
+/* ============== Mobile navbar enhancements ============== */
 @media (max-width: 991.98px) {
+  /* Header bar height + horizontal padding */
+  .header {
+    padding-block: 6px;
+  }
   .header > .container-fluid,
   .header > .container-xl {
     display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
+
+  /* Logo sits at the left with breathing room */
   .header .logo.ure-logo-side {
-    margin-right: auto;
+    margin: 0 !important;
+    padding: 0 !important;
     order: 0;
+    flex: 0 0 auto;
   }
+  .header .logo.ure-logo-side img {
+    height: 38px;
+    width: auto;
+    display: block;
+  }
+
+  /* Hamburger: take it out of absolute positioning, place it on the right
+     of the flex row with a clean target area */
   .header .ure-mobile-toggle {
-    margin-left: auto;
+    position: static !important;
+    right: auto !important;
     order: 2;
+    margin: 0 0 0 auto !important;
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    border: 1px solid rgba(244, 241, 234, 0.55) !important;
+    border-radius: 0 !important;
+    background: rgba(13, 12, 29, 0.18) !important;
+    backdrop-filter: blur(6px);
+    align-items: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
+  .header .ure-mobile-toggle span {
+    width: 18px;
+    height: 1.5px;
+    background: var(--ivory) !important;
+    margin-inline: auto;
+  }
+
+  body.scrolled .header .ure-mobile-toggle,
+  body.sticked .header .ure-mobile-toggle {
+    border-color: var(--ink) !important;
+    background: transparent !important;
+  }
+
+  /* Mobile dropdown panel — editorial restyle */
+  .ure-mobile-menu {
+    background: var(--ink) !important;
+    border-top: 1px solid rgba(244, 241, 234, 0.12) !important;
+    padding: 0 28px !important;
+  }
+  .ure-mobile-menu.open {
+    padding: 24px 28px 32px !important;
+  }
+  .ure-mobile-menu a {
+    font-family: var(--display-font);
+    font-size: 1.6rem !important;
+    font-weight: 500;
+    color: rgba(244, 241, 234, 0.92) !important;
+    padding: 18px 0 !important;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1) !important;
+    letter-spacing: 0.01em;
+  }
+  .ure-mobile-menu a::before {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 0 !important;
+    background: var(--ember) !important;
+    opacity: 1 !important;
+  }
+  .ure-mobile-menu a:hover { color: var(--ivory) !important; }
+
+  /* Mobile CTA button restyled */
+  .ure-mobile-cta {
+    margin-top: 22px !important;
+    padding: 16px !important;
+    background: transparent !important;
+    border: 1px solid var(--ivory) !important;
+    border-radius: 0 !important;
+    color: var(--ivory) !important;
+    font-family: var(--display-font) !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    box-shadow: none !important;
+    transition: background 0.3s ease, color 0.3s ease !important;
+  }
+  .ure-mobile-cta:hover {
+    background: var(--blue) !important;
+    border-color: var(--blue) !important;
+    color: var(--ivory) !important;
+    transform: none !important;
+  }
+
+  /* Footer logo inside drawer */
+  .ure-mobile-logo {
+    border-top: 1px solid rgba(244, 241, 234, 0.1) !important;
+    padding-top: 22px !important;
+  }
+  .ure-mobile-logo img { max-height: 32px; }
 }
 
 .header .ure-navmenu {
