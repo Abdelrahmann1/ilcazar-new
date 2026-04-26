@@ -936,3 +936,341 @@ body { counter-reset: launch; }
   inset-inline-end: auto;
   inset-inline-start: 5%;
 }
+
+/* =====================================================================
+   ENHANCED EDITORIAL MOMENTS
+   ===================================================================== */
+
+/* ---------- Vertical side rail (desktop only) ---------- */
+@media (min-width: 992px) {
+  body.index-page::after {
+    content: "URE × IL CAZAR  —  EST. 2017  —  LICENSED BROKERAGE";
+    position: fixed;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    font-family: var(--mono-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.45em;
+    color: rgba(13, 12, 29, 0.42);
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    color: rgba(244, 241, 234, 0.55);
+  }
+}
+
+/* ---------- Oversized italic word in hero ---------- */
+#hero h2 {
+  position: relative;
+}
+#hero h2::after {
+  content: "vision.";
+  display: block;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3.6rem, 9vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--ember);
+  margin-top: 0.4rem;
+  text-shadow: 0 4px 30px rgba(250, 127, 40, 0.25);
+}
+
+/* ---------- Scroll cue at hero bottom ---------- */
+#hero .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset-inline-start: 50%;
+  bottom: -180px;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(180deg, rgba(244, 241, 234, 0.7), transparent);
+  animation: scroll-cue 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  z-index: 4;
+}
+#hero .container { position: relative; }
+@keyframes scroll-cue {
+  0%   { opacity: 0; transform: translate(-50%, -22px) scaleY(0.4); }
+  35%  { opacity: 1; }
+  70%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(-50%, 22px) scaleY(0.4); }
+}
+
+/* ---------- Editorial marquee strip ---------- */
+.lavista-mini-locations {
+  position: relative;
+  overflow: hidden;
+}
+.lavista-mini-locations::before {
+  content: "VEA  ✦  CREEK TOWN  ✦  GLEN  ✦  SAFIA  ✦  IL CAZAR DEVELOPMENTS  ✦  ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(7rem, 18vw, 16rem);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: rgba(13, 12, 29, 0.04);
+  pointer-events: none;
+  animation: marquee 38s linear infinite;
+  z-index: 0;
+  line-height: 1;
+}
+.lavista-mini-locations > .container { position: relative; z-index: 1; }
+@keyframes marquee {
+  from { transform: translate(0, -50%); }
+  to   { transform: translate(-50%, -50%); }
+}
+
+/* ---------- Project cards: oversized italic sequence numerals ---------- */
+.projects.section .project-card {
+  position: relative;
+}
+.projects.section .col-lg-4:nth-child(1) .project-card::after,
+.projects.section .col-lg-4:nth-child(2) .project-card::after,
+.projects.section .col-lg-4:nth-child(3) .project-card::after,
+.projects.section .col-lg-4:nth-child(4) .project-card::after {
+  position: absolute;
+  top: -56px;
+  inset-inline-start: -12px;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 7rem;
+  line-height: 1;
+  color: rgba(60, 57, 230, 0.18);
+  z-index: 0;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+.projects.section .col-lg-4:nth-child(1) .project-card::after { content: "01"; }
+.projects.section .col-lg-4:nth-child(2) .project-card::after { content: "02"; }
+.projects.section .col-lg-4:nth-child(3) .project-card::after { content: "03"; }
+.projects.section .col-lg-4:nth-child(4) .project-card::after { content: "04"; }
+
+@media (max-width: 991.98px) {
+  .projects.section .project-card::after { display: none !important; }
+}
+
+/* ---------- Architectural section rules ---------- */
+.section-title {
+  position: relative;
+  padding-top: 28px;
+}
+.section-title::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--ember);
+  margin: 0 auto 22px;
+}
+.section-title h2 {
+  position: relative;
+}
+.section-title h2::before,
+.section-title h2::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  vertical-align: middle;
+  background: rgba(13, 12, 29, 0.18);
+  margin: 0 18px;
+}
+
+/* ---------- New launch image: dual-frame offset ---------- */
+.new-launch-section .launch-image {
+  padding: 18px;
+}
+.new-launch-section .launch-image::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 24px 24px;
+  border: 1px solid var(--ember);
+  z-index: -1;
+  pointer-events: none;
+}
+[dir="rtl"] .new-launch-section .launch-image::before {
+  inset: 0 24px 24px 0;
+}
+
+/* ---------- Drop cap on launch description ---------- */
+.new-launch-section .launch-desc::first-letter {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 3.4em;
+  float: inline-start;
+  line-height: 0.85;
+  margin-block-start: 0.18em;
+  margin-inline-end: 0.14em;
+  color: var(--blue);
+}
+
+/* ---------- Project card: refined hover image treatment ---------- */
+.project-card {
+  isolation: isolate;
+}
+.project-card > img {
+  position: relative;
+  z-index: 0;
+}
+.project-card > img + .project-content,
+.project-card .project-content {
+  position: relative;
+  z-index: 1;
+}
+.project-card:hover {
+  border-color: var(--blue) !important;
+}
+.project-card .project-content h3 {
+  position: relative;
+  display: inline-block;
+}
+.project-card .project-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  inset-inline-start: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--ember);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-content h3::after {
+  width: 100%;
+}
+
+/* ---------- Gallery: editorial caption with index ---------- */
+.ure-gallery-item {
+  position: relative;
+}
+.ure-gallery-item::before {
+  position: absolute;
+  top: 14px;
+  inset-inline-start: 14px;
+  font-family: var(--mono-font);
+  font-size: 0.64rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(244, 241, 234, 0.85);
+  background: rgba(13, 12, 29, 0.55);
+  padding: 5px 9px;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+.ure-gallery-grid > a.ure-gallery-item:nth-child(1)::before { content: "—  01 / Field"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(2)::before { content: "—  02 / Glen"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(3)::before { content: "—  03 / VEA"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(4)::before { content: "—  04 / Creek"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(5)::before { content: "—  05 / Studio"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(6)::before { content: "—  06 / Safia"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(7)::before { content: "—  07 / Coast"; }
+.ure-gallery-grid > a.ure-gallery-item:nth-child(8)::before { content: "—  08 / Launch"; }
+
+/* ---------- Footer architectural enrichment ---------- */
+.footer.dark-background {
+  position: relative;
+  overflow: hidden;
+}
+.footer.dark-background::before {
+  content: "IL CAZAR";
+  position: absolute;
+  top: -2.4rem;
+  inset-inline-start: -1rem;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(8rem, 22vw, 22rem);
+  line-height: 0.9;
+  color: rgba(60, 57, 230, 0.05);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  z-index: 0;
+}
+.footer.dark-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-about::before {
+  content: "—  Studio";
+  display: block;
+  font-family: var(--mono-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Buttons: subtle arrow indicator ---------- */
+.btn-register::after,
+.btn-register-out-side::after {
+  content: "→";
+  display: inline-block;
+  margin-inline-start: 0.6rem;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[dir="rtl"] .btn-register::after,
+[dir="rtl"] .btn-register-out-side::after {
+  content: "←";
+}
+.btn-register:hover::after,
+.btn-register-out-side:hover::after {
+  transform: translateX(-6px);
+}
+[dir="rtl"] .btn-register:hover::after,
+[dir="rtl"] .btn-register-out-side:hover::after {
+  transform: translateX(6px);
+}
+
+/* ---------- Cursor enrichment on interactive elements ---------- */
+.btn-register,
+.btn-register-out-side,
+.btn-getstarted,
+.locations-list a,
+.project-card,
+.ure-gallery-item,
+.ure-navmenu a {
+  cursor: pointer;
+}
+
+/* ---------- Section divider rule between major bands ---------- */
+.lavista-mini-locations + section,
+.new-launch-section + .new-launch-section,
+.new-launch-section + .projects {
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Refined floating contact icons ---------- */
+.floating-icons {
+  z-index: 999;
+}
+.floating-icons .circle-btn {
+  background: var(--ink) !important;
+  border: 1px solid var(--ember);
+}
+.floating-icons .phone {
+  background: var(--blue) !important;
+  border: 1px solid var(--ivory);
+}
+.floating-icons img {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- Smooth scroll-margin so anchors clear the fixed header ---------- */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
