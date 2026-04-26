@@ -161,19 +161,47 @@ body.sticked .header .ure-mobile-toggle span {
   overflow: hidden;
 }
 
+/* Make sure carousel + slides fully fill the hero */
+#hero .carousel,
+#hero .carousel-inner,
+#hero .carousel-item {
+  height: 100% !important;
+  width: 100% !important;
+}
+#hero .carousel-item {
+  position: absolute !important;
+  inset: 0 !important;
+}
+#hero .carousel-item.active,
+#hero .carousel-item-next,
+#hero .carousel-item-prev {
+  display: block !important;
+}
 #hero .carousel-item img {
-  filter: grayscale(0.25) contrast(1.05) brightness(0.55);
-  transition: filter 1.2s ease;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  /* Lighter treatment so the photos stay visible */
+  filter: contrast(1.04) saturate(1.05) brightness(0.92);
+  transition: filter 1.2s ease, transform 8s ease;
+}
+#hero .carousel-item.active img {
+  transform: scale(1.04);
 }
 
-#hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(13, 12, 29, 0.25) 0%, rgba(13, 12, 29, 0.65) 60%, var(--ink) 100%);
-  pointer-events: none;
-  z-index: 1;
+/* Neutralize the legacy heavy overlay from main.css and replace with a soft readability tint */
+#hero.hero::before {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 12, 29, 0.30) 0%,
+    rgba(13, 12, 29, 0.18) 45%,
+    rgba(13, 12, 29, 0.55) 100%
+  ) !important;
+  z-index: 2 !important;
 }
+
+/* Remove the previous dark fade-to-ink layer */
+#hero.hero::after { display: none !important; }
 
 #hero .container {
   position: relative;
