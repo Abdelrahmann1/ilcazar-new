@@ -555,22 +555,56 @@ body { counter-reset: launch; }
 
 .launch-units {
   border-block: 1px solid var(--rule);
-  padding-block: 1.2rem;
+  padding: 1.2rem 1.2rem 1.2rem 1rem;
   margin-bottom: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(13, 12, 29, 0.04) 0%,
+    transparent 60%
+  );
+  position: relative;
+}
+.launch-units::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  width: 3px;
+  background: var(--ember);
 }
 .launch-units p {
   margin: 0 !important;
-  font-size: 0.95rem !important;
+  font-size: 0.98rem !important;
+  color: var(--ink);
 }
 .launch-units p strong {
-  font-family: var(--mono-font);
-  font-size: 0.72rem !important;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--blue);
-  display: block;
-  margin-bottom: 0.4rem;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.15rem !important;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #000000 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.55rem;
 }
+.launch-units p strong::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background: #000000;
+  flex: 0 0 22px;
+}
+/* Show separator only on the strong's first line, then keep value flowing */
+.launch-units p strong + br,
+.launch-units p strong {
+  display: block;
+}
+.launch-units p strong { display: flex; }
 
 .btn-register {
   display: inline-flex !important;
