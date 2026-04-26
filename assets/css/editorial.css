@@ -139,27 +139,37 @@ body.index-page::before {
     right: auto !important;
     order: 2;
     margin: 0 0 0 auto !important;
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     padding: 0 !important;
-    border: 1px solid rgba(244, 241, 234, 0.55) !important;
+    border: 1px solid #000000 !important;
     border-radius: 0 !important;
-    background: rgba(13, 12, 29, 0.18) !important;
+    background: rgba(244, 241, 234, 0.92) !important;
     backdrop-filter: blur(6px);
     align-items: center;
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 18px -8px rgba(13, 12, 29, 0.4);
+  }
+  .header .ure-mobile-toggle:hover,
+  .header .ure-mobile-toggle:active {
+    transform: scale(1.05);
+    background: #ffffff !important;
   }
   .header .ure-mobile-toggle span {
-    width: 18px;
-    height: 1.5px;
-    background: var(--ivory) !important;
+    width: 20px;
+    height: 2px;
+    background: #000000 !important;
     margin-inline: auto;
   }
 
   body.scrolled .header .ure-mobile-toggle,
   body.sticked .header .ure-mobile-toggle {
-    border-color: var(--ink) !important;
-    background: transparent !important;
+    border-color: #000000 !important;
+    background: var(--ivory) !important;
+  }
+  body.scrolled .header .ure-mobile-toggle span,
+  body.sticked .header .ure-mobile-toggle span {
+    background: #000000 !important;
   }
 
   /* ============== Mobile dropdown panel — enhanced editorial ============== */
@@ -353,13 +363,13 @@ body.index-page::before {
     z-index: 999;
   }
 
-  /* When menu is open, the X button gets ember tint and ivory bars */
+  /* When menu is open, the X button stays high-contrast black on ivory */
   .ure-mobile-toggle.open {
-    border-color: var(--ember) !important;
-    background: rgba(13, 12, 29, 0.6) !important;
+    border-color: #000000 !important;
+    background: var(--ivory) !important;
   }
   .ure-mobile-toggle.open span {
-    background: var(--ember) !important;
+    background: #000000 !important;
   }
 
   /* Tagline strip above the CTA */
