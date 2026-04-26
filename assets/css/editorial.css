@@ -10,8 +10,8 @@
   --ink: #0d0c1d;
   --ivory: #f4f1ea;
   --paper: #ebe6db;
-  --blue: #3c39e6;
-  --blue-deep: #1a17a8;
+  --blue: #1a1f5c;
+  --blue-deep: #0c1140;
   --ember: #fa7f28;
   --rule: rgba(13, 12, 29, 0.18);
   --display-font: "Cormorant Garamond", "Tajawal", serif;
@@ -23,7 +23,7 @@ body.index-page {
   background-color: var(--ivory);
   color: var(--ink);
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(60, 57, 230, 0.05) 0%, transparent 38%),
+    radial-gradient(circle at 12% 18%, rgba(26, 31, 92, 0.05) 0%, transparent 38%),
     radial-gradient(circle at 88% 76%, rgba(250, 127, 40, 0.06) 0%, transparent 42%);
   background-attachment: fixed;
 }
@@ -1047,7 +1047,7 @@ body { counter-reset: launch; }
   font-weight: 400;
   font-size: 7rem;
   line-height: 1;
-  color: rgba(60, 57, 230, 0.18);
+  color: rgba(26, 31, 92, 0.18);
   z-index: 0;
   pointer-events: none;
   letter-spacing: -0.04em;
@@ -1193,7 +1193,7 @@ body { counter-reset: launch; }
   font-weight: 500;
   font-size: clamp(8rem, 22vw, 22rem);
   line-height: 0.9;
-  color: rgba(60, 57, 230, 0.05);
+  color: rgba(26, 31, 92, 0.05);
   letter-spacing: -0.04em;
   pointer-events: none;
   z-index: 0;

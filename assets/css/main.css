@@ -10,7 +10,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #3c39e6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #1a1f5c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -1278,7 +1278,7 @@ section,
 
 .btn-register {
   display: inline-block;
-  background: linear-gradient(135deg, #3c39e6, #fa7f28);
+  background: linear-gradient(135deg, #1a1f5c, #fa7f28);
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -1292,7 +1292,7 @@ section,
 }
 
 .btn-register:hover {
-  background: linear-gradient(135deg, #fa7f28, #3c39e6);
+  background: linear-gradient(135deg, #fa7f28, #1a1f5c);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(1, 30, 96, 0.5);
   color: #ffffff;
@@ -1435,7 +1435,7 @@ section,
 .custom-register-form .btn-register {
 
   margin-top: 20px;
-  background: linear-gradient(135deg, #3c39e6, #fa7f28);
+  background: linear-gradient(135deg, #1a1f5c, #fa7f28);
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
@@ -1448,7 +1448,7 @@ section,
 }
 
 .custom-register-form .btn-register:hover {
-  background: linear-gradient(135deg, #fa7f28, #3c39e6);
+  background: linear-gradient(135deg, #fa7f28, #1a1f5c);
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(1, 30, 96, 0.5);
 }
@@ -1564,7 +1564,7 @@ section,
 .btn-register-out-side {
   display: inline-block;
   background: linear-gradient(135deg, #e6e9f2, #f5f7fb);
-  color: #3c39e6;
+  color: #1a1f5c;
   font-size: 16px;
   font-weight: 600;
   padding: 14px 36px;
@@ -1578,14 +1578,14 @@ section,
 }
 
 .btn-register-out-side:hover {
-  background: linear-gradient(135deg, #3c39e6, #fa7f28);
+  background: linear-gradient(135deg, #1a1f5c, #fa7f28);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(1, 30, 96, 0.4);
   color: #ffffff;
 }
 .custom-register-form .btn-register-out-side {
   margin-top: 20px;
-  background: linear-gradient(135deg, #3c39e6, #fa7f28);
+  background: linear-gradient(135deg, #1a1f5c, #fa7f28);
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
@@ -1598,7 +1598,7 @@ section,
 }
 
 .custom-register-form .btn-register-out-side:hover {
-  background: linear-gradient(135deg, #fa7f28, #3c39e6);
+  background: linear-gradient(135deg, #fa7f28, #1a1f5c);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(1, 30, 96, 0.5);
 }
@@ -1629,7 +1629,7 @@ section,
 }
 
 .project-content h3 {
-  color: #3c39e6;
+  color: #1a1f5c;
   font-weight: 700;
   margin-bottom: 8px;
   text-align: center;
@@ -1665,20 +1665,20 @@ section,
   content: "✓";
   position: absolute;
   right: 0;
-  color: #3c39e6;
+  color: #1a1f5c;
   font-weight: bold;
 }
 /* New Launch Special Section */
 .new-launch-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #1a17a8, #3c39e6);
+  background: linear-gradient(135deg, #1a17a8, #1a1f5c);
   color: #ffffff;
 }
 
 .launch-tag {
   display: inline-block;
   background: #ffffff;
-  color: #3c39e6;
+  color: #1a1f5c;
   padding: 6px 18px;
   border-radius: 30px;
   font-size: 14px;
@@ -1767,7 +1767,7 @@ section,
 .lavista-mini-locations h4 {
   font-size: 18px;
   font-weight: 700;
-  color: #3c39e6;
+  color: #1a1f5c;
   margin-bottom: 5px;
 }
 
@@ -1786,7 +1786,7 @@ section,
 /* Normal locations */
 .locations-list a, .locations-list span {
   background: #f5f7fb;
-  color: #3c39e6;
+  color: #1a1f5c;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 17px;
@@ -1801,7 +1801,7 @@ section,
 
 /* Hover & Focus Effects for Links */
 .locations-list a:hover {
-  background: #3c39e6;
+  background: #1a1f5c;
   color: #ffffff;
   transform: translateY(-2px); /* Subtle lift effect */
   box-shadow: 0 4px 12px rgba(1, 30, 96, 0.15);
@@ -1815,7 +1815,7 @@ section,
 
 /* NEW Launch Highlight */
 .locations-list .location-new {
-  background: linear-gradient(135deg, #3c39e6, #fa7f28);
+  background: linear-gradient(135deg, #1a1f5c, #fa7f28);
   color: #ffffff;
   font-weight: 700;
   position: relative;
@@ -1823,7 +1823,7 @@ section,
 
 .locations-list .location-new small {
   background: #ffd15c;
-  color: #3c39e6;
+  color: #1a1f5c;
   font-size: 10px;
   font-weight: bold;
   padding: 2px 8px;
@@ -1857,7 +1857,7 @@ section,
 .ure-gallery-title {
   font-size: 36px;
   font-weight: 800;
-  color: #3c39e6;
+  color: #1a1f5c;
   margin-bottom: 12px;
 }
 
