@@ -162,61 +162,189 @@ body.index-page::before {
     background: transparent !important;
   }
 
-  /* Mobile dropdown panel — editorial restyle */
+  /* ============== Mobile dropdown panel — enhanced editorial ============== */
   .ure-mobile-menu {
-    background: var(--ink) !important;
-    border-top: 1px solid rgba(244, 241, 234, 0.12) !important;
-    padding: 0 28px !important;
+    position: fixed !important;
+    top: 0 !important;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: 100% !important;
+    max-height: none !important;
+    height: 100vh !important;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(26, 31, 92, 0.35) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(250, 127, 40, 0.2) 0%, transparent 38%),
+      var(--ink) !important;
+    border: none !important;
+    padding: 96px 32px 36px !important;
+    overflow-y: auto !important;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+    display: flex !important;
+    flex-direction: column;
+    z-index: 998;
   }
+  [dir="rtl"] .ure-mobile-menu { transform: translateX(-100%); }
   .ure-mobile-menu.open {
-    padding: 24px 28px 32px !important;
+    transform: translateX(0) !important;
+    padding: 96px 32px 36px !important;
+    max-height: none !important;
   }
-  .ure-mobile-menu a {
-    font-family: var(--display-font);
-    font-size: 1.6rem !important;
-    font-weight: 500;
-    color: rgba(244, 241, 234, 0.92) !important;
-    padding: 18px 0 !important;
-    border-bottom: 1px solid rgba(244, 241, 234, 0.1) !important;
-    letter-spacing: 0.01em;
-  }
-  .ure-mobile-menu a::before {
-    width: 6px !important;
-    height: 6px !important;
-    border-radius: 0 !important;
-    background: var(--ember) !important;
-    opacity: 1 !important;
-  }
-  .ure-mobile-menu a:hover { color: var(--ivory) !important; }
 
-  /* Mobile CTA button restyled */
-  .ure-mobile-cta {
-    margin-top: 22px !important;
-    padding: 16px !important;
+  /* Decorative grain layer */
+  .ure-mobile-menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: overlay;
+  }
+
+  /* Eyebrow label at top of drawer */
+  .ure-mobile-menu::after {
+    content: "Menu  /  IL Cazar × URE";
+    position: absolute;
+    top: 28px;
+    inset-inline-start: 32px;
+    font-family: var(--mono-font);
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ember);
+    z-index: 1;
+  }
+
+  .ure-mobile-menu a {
+    font-family: var(--display-font) !important;
+    font-style: italic;
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+    color: var(--ivory) !important;
+    padding: 14px 0 !important;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1) !important;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    display: flex !important;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  /* Numbered prefix instead of round dot */
+  .ure-mobile-menu a::before {
+    content: counter(menu-item, decimal-leading-zero) !important;
+    counter-increment: menu-item;
+    width: auto !important;
+    height: auto !important;
     background: transparent !important;
+    border-radius: 0 !important;
+    font-family: var(--mono-font) !important;
+    font-size: 0.7rem !important;
+    font-style: normal;
+    color: var(--ember) !important;
+    letter-spacing: 0.18em;
+    opacity: 0.85 !important;
+    flex: 0 0 auto;
+    position: relative;
+    top: -0.3em;
+  }
+  .ure-mobile-menu { counter-reset: menu-item; }
+
+  .ure-mobile-menu a:hover,
+  .ure-mobile-menu a:active {
+    color: var(--ember) !important;
+    transform: translateX(-6px);
+  }
+  [dir="rtl"] .ure-mobile-menu a:hover,
+  [dir="rtl"] .ure-mobile-menu a:active {
+    transform: translateX(6px);
+  }
+
+  /* ============== Mobile sign-in CTA — fully responsive ============== */
+  .ure-mobile-cta {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 24px !important;
+    min-height: 60px;
+    background: var(--ivory) !important;
     border: 1px solid var(--ivory) !important;
     border-radius: 0 !important;
-    color: var(--ivory) !important;
+    color: var(--ink) !important;
     font-family: var(--display-font) !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-style: italic;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
+    text-transform: none;
     box-shadow: none !important;
-    transition: background 0.3s ease, color 0.3s ease !important;
+    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.3s ease !important;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
   }
-  .ure-mobile-cta:hover {
-    background: var(--blue) !important;
-    border-color: var(--blue) !important;
-    color: var(--ivory) !important;
+  .ure-mobile-cta::after {
+    content: "→";
+    font-family: var(--mono-font) !important;
+    font-style: normal;
+    font-size: 1.2rem;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [dir="rtl"] .ure-mobile-cta::after { content: "←"; }
+  .ure-mobile-cta:hover,
+  .ure-mobile-cta:active {
+    background: var(--ember) !important;
+    border-color: var(--ember) !important;
+    color: var(--ink) !important;
     transform: none !important;
+  }
+  .ure-mobile-cta:hover::after { transform: translateX(-6px); }
+  [dir="rtl"] .ure-mobile-cta:hover::after { transform: translateX(6px); }
+
+  /* Stagger children fade-in inside open drawer */
+  .ure-mobile-menu.open a,
+  .ure-mobile-menu.open .ure-mobile-cta {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Footer logo inside drawer */
   .ure-mobile-logo {
-    border-top: 1px solid rgba(244, 241, 234, 0.1) !important;
+    margin-top: 28px !important;
     padding-top: 22px !important;
+    border-top: 1px solid rgba(244, 241, 234, 0.1) !important;
+    text-align: center;
+    position: relative;
+    z-index: 1;
   }
-  .ure-mobile-logo img { max-height: 32px; }
+  .ure-mobile-logo img {
+    max-height: 38px;
+    background: var(--ivory);
+    padding: 8px 14px;
+    opacity: 1 !important;
+  }
+
+  /* Hamburger floats above the open drawer so user can close it */
+  body.menu-open .ure-mobile-toggle,
+  .header .ure-mobile-toggle {
+    z-index: 999;
+  }
+}
+
+/* Even smaller phones */
+@media (max-width: 380px) {
+  .ure-mobile-menu { padding: 84px 22px 28px !important; }
+  .ure-mobile-menu.open { padding: 84px 22px 28px !important; }
+  .ure-mobile-menu a { font-size: 1.85rem !important; padding: 12px 0 !important; }
+  .ure-mobile-menu::after { inset-inline-start: 22px; top: 22px; }
+  .ure-mobile-cta { font-size: 1.1rem !important; padding: 16px 20px !important; min-height: 54px; }
 }
 
 .header .ure-navmenu {
