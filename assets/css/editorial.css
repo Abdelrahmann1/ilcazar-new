@@ -732,8 +732,9 @@ body.sticked .header .ure-mobile-toggle span {
 .locations-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 0.4rem;
-  justify-content: flex-end;
+  gap: 0.7rem;
+  justify-content: center !important;
+  align-items: center;
 }
 .locations-list a {
   font-family: var(--display-font);
