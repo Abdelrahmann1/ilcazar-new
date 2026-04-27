@@ -1509,27 +1509,32 @@ body { counter-reset: launch; }
 }
 .floating-icons .circle-btn,
 .floating-icons .phone {
-  background: transparent !important;
-  border: none !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 12, 29, 0.08) !important;
   box-shadow: 0 14px 30px -10px rgba(13, 12, 29, 0.35);
-  width: auto;
-  height: auto;
-  padding: 0 !important;
+  width: 64px;
+  height: 64px;
+  padding: 10px !important;
   border-radius: 50%;
-  overflow: visible;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.4s ease;
+              box-shadow 0.4s ease,
+              background 0.3s ease;
 }
 .floating-icons .circle-btn:hover,
 .floating-icons .phone:hover {
+  background: #ffffff !important;
   transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 22px 40px -12px rgba(13, 12, 29, 0.45);
+  box-shadow: 0 22px 44px -12px rgba(13, 12, 29, 0.5);
 }
-/* Show your actual PNG icons in their natural colors */
+/* PNG icons centered in the white circle at natural color */
 .floating-icons img {
   filter: none !important;
-  width: 56px;
-  height: 56px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
