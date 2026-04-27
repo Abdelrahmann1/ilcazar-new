@@ -79,10 +79,15 @@ body.index-page::before {
     padding-right: 24px !important;
     order: 0;
   }
+  /* White pill so the dark logo is visible against any background */
   .header .logo.ure-logo-side img {
     display: block;
     height: 44px;
     width: auto;
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.4);
   }
 
   /* Nav menu lives in the AUTO middle column — dead-centered horizontally */
@@ -133,6 +138,10 @@ body.index-page::before {
     height: 38px;
     width: auto;
     display: block;
+    background: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.4);
   }
 
   /* Hamburger: take it out of absolute positioning, place it on the right
@@ -476,13 +485,22 @@ body.sticked .header .ure-mobile-toggle span {
   background-color: var(--ink) !important;
   background-image: var(--dark-section-bg) !important;
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
+  padding: 80px 0 50px 0 !important;
   overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  #hero.hero,
+  #hero.hero-solid {
+    min-height: auto;
+    padding: 70px 0 36px 0 !important;
+  }
 }
 
 /* Subtle architectural grid lines */
 #hero.hero::before,
 #hero.hero-solid::before {
+  background-color: #0d0c1d;
   content: "" !important;
   position: absolute;
   inset: 0;
