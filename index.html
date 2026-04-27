@@ -532,47 +532,73 @@
         <p class="ure-gallery-sub">استكشف أبرز مشروعات IL Cazar Developments</p>
       </div>
 
-      <div class="ure-gallery-grid" data-aos="fade-up" data-aos-delay="100">
+      <!-- Auto-cycling gallery slider -->
+      <div id="galleryCarousel" class="carousel slide ure-gallery-carousel" data-bs-ride="carousel"
+        data-bs-interval="3500" data-aos="fade-up" data-aos-delay="100" dir="ltr">
 
-        <a href="assets/img/vea.jpeg" class="ure-gallery-item ure-gallery-wide glightbox" data-gallery="ilcazar">
-          <img src="assets/img/vea.jpeg" alt="VEA — IL Cazar" loading="lazy">
-          <div class="ure-gallery-overlay"><span>VEA</span></div>
-        </a>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        </div>
 
-        <a href="assets/img/geln/كمبوند-جلين-التجمع-السادس.webp" class="ure-gallery-item glightbox" data-gallery="ilcazar">
-          <img src="assets/img/geln/كمبوند-جلين-التجمع-السادس.webp" alt="Glen" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Glen</span></div>
-        </a>
+        <div class="carousel-inner">
 
-        <a href="assets/img/Creek/imgi_24_nord-x-cazar_0012_Layer-7.jpg" class="ure-gallery-item glightbox" data-gallery="ilcazar">
-          <img src="assets/img/Creek/imgi_24_nord-x-cazar_0012_Layer-7.jpg" alt="Creek Town" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Creek Town</span></div>
-        </a>
+          <div class="carousel-item active">
+            <img src="assets/img/vea.jpeg" class="d-block w-100" alt="VEA">
+            <div class="carousel-caption"><span>VEA</span></div>
+          </div>
 
-        <a href="assets/img/safia/imgi_5_Safia-North-Coast-By-IL-Cazar-Developments.jpg" class="ure-gallery-item glightbox" data-gallery="ilcazar">
-          <img src="assets/img/safia/imgi_5_Safia-North-Coast-By-IL-Cazar-Developments.jpg" alt="Safia North Coast" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Safia</span></div>
-        </a>
+          <div class="carousel-item">
+            <img src="assets/img/geln/كمبوند-جلين-التجمع-السادس.webp" class="d-block w-100" alt="Glen">
+            <div class="carousel-caption"><span>Glen</span></div>
+          </div>
 
-        <a href="assets/img/Creek/imgi_25_nord-x-cazar_0010_Layer-2.jpg" class="ure-gallery-item ure-gallery-tall glightbox" data-gallery="ilcazar">
-          <img src="assets/img/Creek/imgi_25_nord-x-cazar_0010_Layer-2.jpg" alt="Creek Town" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Creek Town</span></div>
-        </a>
+          <div class="carousel-item">
+            <img src="assets/img/Creek/imgi_24_nord-x-cazar_0012_Layer-7.jpg" class="d-block w-100" alt="Creek Town">
+            <div class="carousel-caption"><span>Creek Town</span></div>
+          </div>
 
-        <a href="assets/img/safia/imgi_2_Safia-Ras-El-Hekma.jpg" class="ure-gallery-item glightbox" data-gallery="ilcazar">
-          <img src="assets/img/safia/imgi_2_Safia-Ras-El-Hekma.jpg" alt="Safia Ras El Hekma" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Safia Ras El Hekma</span></div>
-        </a>
+          <div class="carousel-item">
+            <img src="assets/img/safia/imgi_5_Safia-North-Coast-By-IL-Cazar-Developments.jpg" class="d-block w-100" alt="Safia North Coast">
+            <div class="carousel-caption"><span>Safia</span></div>
+          </div>
 
-        <a href="assets/img/geln/كمبوند-حلين.webp" class="ure-gallery-item glightbox" data-gallery="ilcazar">
-          <img src="assets/img/geln/كمبوند-حلين.webp" alt="Glen Compound" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Glen</span></div>
-        </a>
+          <div class="carousel-item">
+            <img src="assets/img/Creek/imgi_25_nord-x-cazar_0010_Layer-2.jpg" class="d-block w-100" alt="Creek Town">
+            <div class="carousel-caption"><span>Creek Town</span></div>
+          </div>
 
-        <a href="assets/img/safia/imgi_6_Safia-North-Coast-Resort.jpg" class="ure-gallery-item ure-gallery-wide glightbox" data-gallery="ilcazar">
-          <img src="assets/img/safia/imgi_6_Safia-North-Coast-Resort.jpg" alt="Safia Resort" loading="lazy">
-          <div class="ure-gallery-overlay"><span>Safia Resort</span></div>
-        </a>
+          <div class="carousel-item">
+            <img src="assets/img/safia/imgi_2_Safia-Ras-El-Hekma.jpg" class="d-block w-100" alt="Safia Ras El Hekma">
+            <div class="carousel-caption"><span>Safia Ras El Hekma</span></div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="assets/img/geln/كمبوند-حلين.webp" class="d-block w-100" alt="Glen Compound">
+            <div class="carousel-caption"><span>Glen</span></div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="assets/img/safia/imgi_6_Safia-North-Coast-Resort.jpg" class="d-block w-100" alt="Safia Resort">
+            <div class="carousel-caption"><span>Safia Resort</span></div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
 
       </div>
     </div>
