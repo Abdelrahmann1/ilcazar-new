@@ -574,6 +574,88 @@ body.sticked .header .ure-mobile-toggle span {
   #hero p { font-size: 0.95rem !important; line-height: 1.75 !important; }
 }
 
+/* ---------- Hero scroll-to-gallery cue ---------- */
+.hero-scroll-cue {
+  margin-top: 3rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+  color: var(--ivory) !important;
+  opacity: 0.85;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+.hero-scroll-cue:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: var(--ember) !important;
+}
+.scroll-cue-label {
+  font-family: var(--display-font);
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.scroll-cue-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: scroll-cue-bounce 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.scroll-cue-icon::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--ember);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1);
+  animation: scroll-cue-pulse 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.scroll-cue-icon svg {
+  display: block;
+  animation: scroll-cue-arrow 2.2s ease-in-out infinite;
+}
+.hero-scroll-cue:hover .scroll-cue-icon {
+  border-color: var(--ember);
+  background: rgba(250, 127, 40, 0.1);
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+@keyframes scroll-cue-arrow {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(3px); opacity: 0.7; }
+}
+@keyframes scroll-cue-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  80%  { transform: scale(1.5); opacity: 0;   }
+  100% { transform: scale(1.5); opacity: 0;   }
+}
+
+@media (max-width: 575.98px) {
+  .hero-scroll-cue { margin-top: 2rem; gap: 8px; }
+  .scroll-cue-label { font-size: 0.66rem; letter-spacing: 0.26em; }
+  .scroll-cue-icon { width: 38px; height: 38px; }
+  .scroll-cue-icon svg { width: 18px; height: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-icon,
+  .scroll-cue-icon svg,
+  .scroll-cue-icon::before { animation: none !important; }
+}
+
 .btn-register-out-side {
   display: inline-flex !important;
   align-items: center;
@@ -614,7 +696,7 @@ body.sticked .header .ure-mobile-toggle span {
 .lavista-mini-locations {
   background: var(--paper);
   border-block: 1px solid var(--rule);
-  padding-block: 3.5rem !important;
+  padding-block: 2.2rem !important;
   position: relative;
 }
 .lavista-mini-locations h4 {
@@ -674,7 +756,7 @@ body.sticked .header .ure-mobile-toggle span {
 /* ---------- New Launch / Highlight Sections ---------- */
 .new-launch-section {
   background: var(--ivory);
-  padding-block: 7rem !important;
+  padding-block: 4.5rem !important;
   position: relative;
   border-top: 1px solid var(--rule);
 }
@@ -877,7 +959,7 @@ body { counter-reset: launch; }
 /* ---------- Projects grid ---------- */
 .projects.section {
   background: var(--ivory) !important;
-  padding-block: 7rem !important;
+  padding-block: 4.5rem !important;
   border-top: 1px solid var(--rule);
 }
 
@@ -1005,7 +1087,7 @@ body { counter-reset: launch; }
   background-color: var(--ink) !important;
   background-image: var(--dark-section-bg) !important;
   color: var(--ivory) !important;
-  padding-block: 8rem !important;
+  padding-block: 4rem !important;
   position: relative;
   overflow: hidden;
 }
