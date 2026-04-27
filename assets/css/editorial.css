@@ -984,10 +984,26 @@ body { counter-reset: launch; }
 /* ---------- Gallery ---------- */
 .ure-gallery-section {
   background: var(--ink) !important;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(26, 31, 92, 0.55) 0%, transparent 45%),
+    radial-gradient(circle at 82% 78%, rgba(250, 127, 40, 0.18) 0%, transparent 50%) !important;
   color: var(--ivory) !important;
   padding-block: 8rem !important;
   position: relative;
+  overflow: hidden;
 }
+.ure-gallery-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244, 241, 234, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 241, 234, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+.ure-gallery-section > * { position: relative; z-index: 1; }
 .ure-gallery-label {
   font-family: var(--mono-font) !important;
   font-size: 0.72rem !important;
