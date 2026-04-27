@@ -508,18 +508,18 @@ body.sticked .header .ure-mobile-toggle span {
   z-index: 3;
 }
 
-/* Unified dark backdrop wrapping title + subtitle — lighter so the photo shows */
+/* No panel, no blur — let the photo fill the entire hero behind the text */
 #hero .container > .row {
   position: relative;
-  background: rgba(13, 12, 29, 0.32);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  padding: 3rem 3rem 3.2rem !important;
-  border-inline-start: 4px solid var(--ember);
-  max-width: 1100px;
-  width: 92%;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 1rem !important;
+  border: none !important;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto !important;
-  box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.4);
+  box-shadow: none !important;
 }
 
 /* Allow the inner Bootstrap column to expand to fill the wider panel */
@@ -539,20 +539,27 @@ body.sticked .header .ure-mobile-toggle span {
   color: var(--ivory);
   margin-bottom: 1.4rem;
   position: relative;
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.85),
+    0 1px 4px rgba(0, 0, 0, 0.95),
+    0 0 40px rgba(0, 0, 0, 0.55);
 }
 
 #hero p {
   font-family: "Tajawal", sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.3rem);
   line-height: 1.85;
-  color: rgba(244, 241, 234, 0.94);
+  color: rgba(244, 241, 234, 0.96);
   max-width: 72ch;
   margin-inline: auto;
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.85),
+    0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 767.98px) {
   #hero .container > .row {
-    padding: 1.8rem 1.4rem 2rem !important;
+    padding: 0 1rem !important;
     width: 100%;
     max-width: 100%;
   }
