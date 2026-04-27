@@ -518,9 +518,15 @@ body.sticked .header .ure-mobile-toggle span {
 #hero .container {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(70vh - 130px);
+  text-align: center;
 }
 
-/* No panel, no blur — let the photo fill the entire hero behind the text */
+/* Centered text block, no panel, no blur */
 #hero .container > .row {
   position: relative;
   background: transparent !important;
@@ -532,6 +538,11 @@ body.sticked .header .ure-mobile-toggle span {
   width: 100%;
   margin: 0 auto !important;
   box-shadow: none !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+#hero .container > .row > * {
+  text-align: center !important;
 }
 
 /* Allow the inner Bootstrap column to expand to fill the wider panel */
@@ -560,9 +571,12 @@ body.sticked .header .ure-mobile-toggle span {
   line-height: 1.85;
   color: rgba(244, 241, 234, 0.85);
   max-width: 72ch;
-  margin-inline: auto;
+  margin: 0 auto !important;
   text-shadow: none;
+  text-align: center !important;
 }
+
+#hero h2 { text-align: center !important; }
 
 @media (max-width: 767.98px) {
   #hero .container > .row {
