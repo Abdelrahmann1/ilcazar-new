@@ -486,9 +486,9 @@ body.sticked .header .ure-mobile-toggle span {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  filter: blur(8px) contrast(1.04) saturate(1.05) brightness(0.85);
-  /* Slight upscale prevents blur edge halos at the viewport edges */
-  transform: scale(1.04);
+  filter: blur(2.5px) contrast(1.04) saturate(1.05) brightness(0.9);
+  /* Tiny upscale prevents blur edge halos at the viewport edges */
+  transform: scale(1.015);
 }
 
 /* Neutralize the legacy heavy overlay from main.css and replace with a soft readability tint */
