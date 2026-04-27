@@ -467,32 +467,18 @@ body.sticked .header .ure-mobile-toggle span {
 .btn-getstarted:hover::before { transform: translateY(0); }
 .btn-getstarted:hover { color: var(--ivory) !important; }
 
-/* ---------- Hero (solid background, no photo) ---------- */
+/* ---------- Hero (pure black background) ---------- */
 #hero.hero,
 #hero.hero-solid {
-  background: var(--ink) !important;
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(26, 31, 92, 0.55) 0%, transparent 45%),
-    radial-gradient(circle at 82% 78%, rgba(250, 127, 40, 0.18) 0%, transparent 50%);
+  background: #000000 !important;
+  background-image: none !important;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
-/* Subtle architectural grid lines for editorial texture */
 #hero.hero::before,
-#hero.hero-solid::before {
-  content: "" !important;
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(244, 241, 234, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244, 241, 234, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
-  z-index: 1 !important;
-}
-
+#hero.hero-solid::before { display: none !important; }
 #hero.hero::after,
 #hero.hero-solid::after { display: none !important; }
 
@@ -983,27 +969,12 @@ body { counter-reset: launch; }
 
 /* ---------- Gallery ---------- */
 .ure-gallery-section {
-  background: var(--ink) !important;
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(26, 31, 92, 0.55) 0%, transparent 45%),
-    radial-gradient(circle at 82% 78%, rgba(250, 127, 40, 0.18) 0%, transparent 50%) !important;
+  background: #000000 !important;
+  background-image: none !important;
   color: var(--ivory) !important;
   padding-block: 8rem !important;
   position: relative;
-  overflow: hidden;
 }
-.ure-gallery-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(244, 241, 234, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244, 241, 234, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
-  z-index: 0;
-}
-.ure-gallery-section > * { position: relative; z-index: 1; }
 .ure-gallery-label {
   font-family: var(--mono-font) !important;
   font-size: 0.72rem !important;
