@@ -14,8 +14,8 @@
   --blue-deep: #0c1140;
   --ember: #fa7f28;
   --rule: rgba(13, 12, 29, 0.18);
-  --display-font: "Cormorant Garamond", "Tajawal", serif;
-  --mono-font: "JetBrains Mono", "Courier New", monospace;
+  --display-font: "Tajawal", sans-serif;
+  --mono-font: "Tajawal", sans-serif;
 }
 
 /* Background canvas: warm ivory paper with subtle grain */
@@ -223,7 +223,7 @@ body.index-page::before {
   .ure-drawer-nav a,
   .ure-mobile-menu .ure-drawer-nav a {
     font-family: var(--display-font) !important;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.4rem !important;
     font-weight: 500 !important;
     color: var(--ivory) !important;
@@ -276,7 +276,7 @@ body.index-page::before {
     border-radius: 0 !important;
     color: #000000 !important;
     font-family: var(--display-font) !important;
-    font-style: italic !important;
+    font-style: normal !important;
     font-size: 1.15rem !important;
     font-weight: 600 !important;
     letter-spacing: 0 !important;
@@ -326,7 +326,7 @@ body.index-page::before {
   }
   .ure-drawer-brand em {
     font-family: var(--display-font);
-    font-style: italic;
+    font-style: normal;
     font-weight: 500;
     font-size: 1.05rem;
     color: var(--ivory);
@@ -590,7 +590,7 @@ body.sticked .header .ure-mobile-toggle span {
 }
 .lavista-mini-locations h4 {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   color: var(--ink) !important;
   font-size: 2.6rem !important;
@@ -680,7 +680,7 @@ body { counter-reset: launch; }
 .new-launch-section h2 {
   font-family: var(--display-font) !important;
   font-weight: 500 !important;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(3rem, 6vw, 5.5rem) !important;
   line-height: 1 !important;
   letter-spacing: -0.02em;
@@ -761,7 +761,7 @@ body { counter-reset: launch; }
 }
 .launch-units p strong {
   font-family: var(--display-font);
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
   font-size: 1.15rem !important;
   letter-spacing: 0;
@@ -851,7 +851,7 @@ body { counter-reset: launch; }
 
 .section-title h2 {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   font-size: clamp(2.4rem, 4.6vw, 4rem) !important;
   color: var(--ink) !important;
@@ -913,7 +913,7 @@ body { counter-reset: launch; }
 }
 .project-content h3 {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   font-size: 2.2rem !important;
   color: var(--ink) !important;
@@ -979,7 +979,7 @@ body { counter-reset: launch; }
 }
 .ure-gallery-title {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   font-size: clamp(2.6rem, 5.2vw, 4.8rem) !important;
   color: var(--ivory) !important;
@@ -1014,7 +1014,7 @@ body { counter-reset: launch; }
 }
 .ure-gallery-overlay span {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-size: 1.4rem !important;
   font-weight: 500 !important;
   letter-spacing: 0.01em;
@@ -1029,7 +1029,7 @@ body { counter-reset: launch; }
 }
 .footer .sitename {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   font-size: 2rem;
   color: var(--ivory) !important;
@@ -1095,7 +1095,7 @@ body { counter-reset: launch; }
 }
 .modal-body h3 {
   font-family: var(--display-font) !important;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500 !important;
   font-size: 2rem !important;
 }
@@ -1220,7 +1220,7 @@ body { counter-reset: launch; }
   left: 0;
   transform: translateY(-50%);
   font-family: var(--display-font);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: clamp(7rem, 18vw, 16rem);
   letter-spacing: -0.03em;
@@ -1249,7 +1249,7 @@ body { counter-reset: launch; }
   top: -56px;
   inset-inline-start: -12px;
   font-family: var(--display-font);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   font-size: 7rem;
   line-height: 1;
@@ -1333,7 +1333,7 @@ body { counter-reset: launch; }
 /* ---------- Drop cap on launch description ---------- */
 .new-launch-section .launch-desc::first-letter {
   font-family: var(--display-font);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: 3.4em;
   float: inline-start;
@@ -1415,7 +1415,7 @@ body { counter-reset: launch; }
   top: -2.4rem;
   inset-inline-start: -1rem;
   font-family: var(--display-font);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: clamp(8rem, 22vw, 22rem);
   line-height: 0.9;
