@@ -514,40 +514,50 @@ body.sticked .header .ure-mobile-toggle span {
   background: rgba(13, 12, 29, 0.32);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  padding: 2.4rem 2rem 2.6rem !important;
-  border-inline-start: 3px solid var(--ember);
-  max-width: 760px;
+  padding: 3rem 3rem 3.2rem !important;
+  border-inline-start: 4px solid var(--ember);
+  max-width: 1100px;
+  width: 92%;
   margin: 0 auto !important;
   box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.4);
 }
 
+/* Allow the inner Bootstrap column to expand to fill the wider panel */
+#hero .container > .row > .col-xl-6,
+#hero .container > .row > [class*="col-"] {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
 #hero h2 {
   font-family: var(--display-font);
-  font-weight: 500;
-  font-size: clamp(1.5rem, 3.4vw, 2.6rem);
-  line-height: 1.2;
-  letter-spacing: -0.005em;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   color: var(--ivory);
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   position: relative;
 }
 
 #hero p {
   font-family: "Tajawal", sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.8;
-  color: rgba(244, 241, 234, 0.92);
-  max-width: 60ch;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.85;
+  color: rgba(244, 241, 234, 0.94);
+  max-width: 72ch;
   margin-inline: auto;
 }
 
 @media (max-width: 767.98px) {
   #hero .container > .row {
-    padding: 1.4rem 1.2rem 1.6rem !important;
+    padding: 1.8rem 1.4rem 2rem !important;
+    width: 100%;
     max-width: 100%;
   }
-  #hero h2 { font-size: 1.3rem !important; line-height: 1.25 !important; }
-  #hero p { font-size: 0.85rem !important; line-height: 1.7 !important; }
+  #hero h2 { font-size: 1.7rem !important; line-height: 1.25 !important; }
+  #hero p { font-size: 0.95rem !important; line-height: 1.75 !important; }
 }
 
 .btn-register-out-side {
