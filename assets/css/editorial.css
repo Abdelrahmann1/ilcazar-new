@@ -1509,6 +1509,7 @@ body { counter-reset: launch; }
 }
 .floating-icons .circle-btn,
 .floating-icons .phone {
+  position: relative;
   background: #ffffff !important;
   border: 1px solid rgba(13, 12, 29, 0.08) !important;
   box-shadow: 0 14px 30px -10px rgba(13, 12, 29, 0.35);
@@ -1516,27 +1517,117 @@ body { counter-reset: launch; }
   height: 64px;
   padding: 10px !important;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   display: flex !important;
   align-items: center;
   justify-content: center;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.4s ease,
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease,
               background 0.3s ease;
+  animation: fab-float 4s ease-in-out infinite;
 }
+
+/* Stagger the float so the two icons don't bob in sync */
+.floating-icons .phone { animation-delay: -2s; }
+
+/* Pulsing rings emanating outward */
+.floating-icons .circle-btn::before,
+.floating-icons .circle-btn::after,
+.floating-icons .phone::before,
+.floating-icons .phone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  animation: fab-pulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.floating-icons .circle-btn::before {
+  border: 2px solid #25D366;     /* WhatsApp green */
+}
+.floating-icons .circle-btn::after {
+  border: 2px solid #25D366;
+  animation-delay: 1.3s;
+}
+.floating-icons .phone::before {
+  border: 2px solid var(--ember);
+}
+.floating-icons .phone::after {
+  border: 2px solid var(--ember);
+  animation-delay: 1.3s;
+}
+
 .floating-icons .circle-btn:hover,
 .floating-icons .phone:hover {
   background: #ffffff !important;
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 22px 44px -12px rgba(13, 12, 29, 0.5);
+  transform: translateY(-6px) scale(1.1) rotate(-4deg);
+  box-shadow: 0 28px 50px -12px rgba(13, 12, 29, 0.55);
+  animation-play-state: paused;
 }
-/* PNG icons centered in the white circle at natural color */
+.floating-icons .circle-btn:hover::before,
+.floating-icons .circle-btn:hover::after,
+.floating-icons .phone:hover::before,
+.floating-icons .phone:hover::after {
+  animation-duration: 1.2s;
+}
+.floating-icons .circle-btn:active,
+.floating-icons .phone:active {
+  transform: translateY(-2px) scale(0.96);
+  transition-duration: 0.15s;
+}
+
+/* PNG icons centered in the white circle, with a subtle bobble on hover */
 .floating-icons img {
   filter: none !important;
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.floating-icons .circle-btn:hover img {
+  animation: fab-shake 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.floating-icons .phone:hover img {
+  animation: fab-ring 0.9s ease-in-out;
+}
+
+@keyframes fab-float {
+  0%, 100% { transform: translateY(0) }
+  50%      { transform: translateY(-5px) }
+}
+
+@keyframes fab-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0;   }
+  100% { transform: scale(1.6); opacity: 0;   }
+}
+
+@keyframes fab-shake {
+  0%, 100% { transform: rotate(0); }
+  20%      { transform: rotate(-12deg); }
+  40%      { transform: rotate(10deg); }
+  60%      { transform: rotate(-7deg); }
+  80%      { transform: rotate(4deg); }
+}
+
+@keyframes fab-ring {
+  0%, 50%, 100% { transform: rotate(0); }
+  10%, 30%       { transform: rotate(-18deg); }
+  20%, 40%       { transform: rotate(18deg); }
+}
+
+/* Respect reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .floating-icons .circle-btn,
+  .floating-icons .phone,
+  .floating-icons .circle-btn::before,
+  .floating-icons .circle-btn::after,
+  .floating-icons .phone::before,
+  .floating-icons .phone::after {
+    animation: none !important;
+  }
 }
 
 /* ---------- Footer brand mark (replaces stretched favicon) ---------- */
