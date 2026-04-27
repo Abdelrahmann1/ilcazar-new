@@ -486,14 +486,14 @@ body.sticked .header .ure-mobile-toggle span {
   background-image: var(--dark-section-bg) !important;
   position: relative;
   min-height: 70vh;
-  padding: 80px 0 50px 0 !important;
+  padding: 160px 0 64px 0 !important;
   overflow: hidden;
 }
 @media (max-width: 767.98px) {
   #hero.hero,
   #hero.hero-solid {
     min-height: auto;
-    padding: 70px 0 36px 0 !important;
+    padding: 130px 0 48px 0 !important;
   }
 }
 
